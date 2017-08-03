@@ -1,0 +1,10 @@
+{
+    "/dev.api.php": {
+        "target": "https://b2b.hzanchu.com/api.php",
+        "secure":false,
+        "changeOrigin": true,
+        "pathRewrite": {
+        	"^/dev.api.php" : ""
+    	}
+    }
+}

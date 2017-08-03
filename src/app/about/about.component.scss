@@ -1,0 +1,30 @@
+/**
+ *	sass使用
+ *	by lucy 2017/08/03
+**/
+
+$class-pre:"about";
+.#{$class-pre}{
+	&-wrap{
+		color:red;
+		i{
+			font-size: 40px;
+		}
+	}
+	&-span{
+		color: #009e4d;
+		font-size: 30px;
+	}
+
+	&-dl{
+		font-size: 30px;
+		&-dt{
+			color: pink;
+		}
+		&-dd{
+			color: #333;
+			font-size: 20px;
+		}
+	}
+
+}
