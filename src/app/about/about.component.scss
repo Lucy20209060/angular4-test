@@ -7,23 +7,25 @@ $class-pre:"about";
 .#{$class-pre}{
 	&-wrap{
 		color:red;
+		margin: 0;
+		padding: 0;
 		i{
-			font-size: 40px;
+			font-size: .4rem;
 		}
 	}
 	&-span{
 		color: #009e4d;
-		font-size: 30px;
+		font-size: .3rem;
 	}
 
 	&-dl{
-		font-size: 30px;
+		font-size: .3rem;
 		&-dt{
 			color: pink;
 		}
 		&-dd{
 			color: #333;
-			font-size: 20px;
+			font-size: .2rem;
 		}
 	}
 
