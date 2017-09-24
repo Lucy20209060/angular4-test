@@ -18,6 +18,9 @@ export class GoodsComponent implements OnInit {
 
 }
 
+// 数组 可添加多个scss 或 css 文件
+// styleUrls: ['./goods.component.scss'],
+
 // 组件传值	父 => 子
 
 // 父
