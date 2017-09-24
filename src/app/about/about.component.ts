@@ -5,7 +5,11 @@ import 'rxjs/add/operator/toPromise';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  // 只有当组件被其他组件引用时 会被加上 class="row"
+  host:{						
+  	class:'row'
+  }
 })
 
 @Injectable()

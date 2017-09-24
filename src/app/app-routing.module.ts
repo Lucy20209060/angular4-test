@@ -17,11 +17,7 @@ const routes: Routes = [
             { path:'cart/:id', component:CartComponent },
             { path:'mine', component:MineComponent }
         ]
-	},
-    // {
-    //     path:'index',
-    //     component:IndexComponent
-    // },
+	}
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { MineComponent } from './mine/mine.component';
 import { IndexComponent } from './index/index.component';
+import { GoodsComponent } from './goods/goods.component';
 
 // 自定义管道
 const pipe = [
@@ -25,7 +26,8 @@ const pipe = [
     AboutComponent,
     CartComponent,
     MineComponent,
-    IndexComponent
+    IndexComponent,
+    GoodsComponent
   ],
   imports: [
     BrowserModule,

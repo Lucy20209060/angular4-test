@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+	allInfo:object;
+	constructor() {
+		this.allInfo = {
+			name:'lucy',
+			id:18,
+			infos:{
+				img:'../../assets/img/lu.jpg',
+				sku:34236746723
+			}
+		}
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
