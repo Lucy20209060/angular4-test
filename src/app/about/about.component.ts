@@ -1,17 +1,15 @@
 import { Component, OnInit,Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions  } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-
 import { category } from '../../tools/api'
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
-  // 只有当组件被其他组件引用时 会被加上 class="row"
-  host:{						
-  	class:'row'
-  }
+	selector: 'app-about',
+	templateUrl: './about.component.html',
+	styleUrls: ['./about.component.scss'],
+	host:{									// 只有当组件被其他组件引用时 会被加上 class="row"					
+		class:'row'
+	}
 })
 
 @Injectable()
@@ -23,34 +21,17 @@ export class AboutComponent implements OnInit {
 	constructor(private http: Http) {
 
 	}
-		
-
+	
 	ngOnInit() {
-		console.log(category.getlevel1)
+		this.makeRequest();
+	}
 
-		this.getBooks().then(res => {
-			console.log(res.data)
-			this.mobiles = res.data;
+	// http请求
+	makeRequest():void{
+		this.http.request(category.getlevel1).subscribe((res:Response) => {
+			const data = res.json();
+			console.log(data)
 		});
-	}
-
-
-	getBooks() {
-
-		const url = '/api.php?s=api/index/category_products'; 
-
-		return this.http.get(url)   
-						.toPromise()   
-						.then(res => res.json())   
-						.catch(this.handleError);  
-	}
-
-	handleError(error: any): Promise<any> {   
-
-	    console.error('An error occurred', error); // for demo purposes only   
-
-	    return Promise.reject(error.message || error);   
-
 	}
 
 	goCart(){
