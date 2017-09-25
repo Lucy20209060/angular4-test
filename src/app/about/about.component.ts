@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
 
 	getBooks() {
 
-		const url = '/dev.api.php?s=api/index/category_products'; 
+		const url = '/api.php?s=api/index/category_products'; 
 
 		return this.http.get(url)   
 						.toPromise()   

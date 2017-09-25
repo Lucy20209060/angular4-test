@@ -33,7 +33,7 @@ export class GoodsComponent implements OnInit {
 // })
 // export class GoodsComponent implements OnInit {
 
-// 	info:number;
+// 	id:number;
 
 // 	constructor() { }
 

@@ -12,7 +12,8 @@ const routes: Routes = [
 		path: '',
 		component:IndexComponent,
         children: [
-            { path: 'home', component:HomeComponent },
+            { path:'', redirectTo: 'home',pathMatch: 'full' },
+            { path:'home', component:HomeComponent },
             { path:'about', component:AboutComponent },
             { path:'cart/:id', component:CartComponent },
             { path:'mine', component:MineComponent }
