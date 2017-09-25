@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { MineComponent } from './mine/mine.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
 	{
@@ -18,11 +19,22 @@ const routes: Routes = [
             { path:'cart/:id', component:CartComponent },
             { path:'mine', component:MineComponent }
         ]
-	}
+	},
+
+    // 404 - Not Found 页面
+    { path:'404', component:NotFoundComponent },
+    { path: '**', redirectTo: '404',pathMatch: 'full' }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(
+        routes,
+        // 如果我们想要看到在导航的生命周期中发生过哪些事件，可以使用路由器默认配置中的enableTracing选项。
+        // 它会把每个导航生命周期中的事件输出到浏览器的控制台。 这应该只用于调试。我们只需要把enableTracing: true选项
+        // 作为第二个参数传给RouterModule.forRoot()方法就可以了。
+        // { enableTracing: true }
+    )],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

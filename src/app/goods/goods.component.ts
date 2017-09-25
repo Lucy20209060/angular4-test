@@ -4,11 +4,12 @@ import { Component, OnInit,Input } from '@angular/core';
 	selector: 'app-goods',
 	templateUrl: './goods.component.html',
 	styleUrls: ['./goods.component.scss'],
-	inputs:['info']
+	// inputs:['info']
 })
 export class GoodsComponent implements OnInit {
 
-	info:object;
+	// info:object;
+	@Input() info: object;
 
 	constructor() { }
 
@@ -22,6 +23,8 @@ export class GoodsComponent implements OnInit {
 // styleUrls: ['./goods.component.scss'],
 
 // 组件传值	父 => 子
+
+// 1. inputs 方式
 
 // 父
 // <app-goods [id]="10"></app-goods>
@@ -39,4 +42,11 @@ export class GoodsComponent implements OnInit {
 
 // 	ngOnInit() { }
 
+// }
+
+
+// 2. @Input() 方式
+
+// export class GoodsComponent implements OnInit {
+// 	@Input() info: object;
 // }

@@ -2,6 +2,8 @@ import { Component, OnInit,Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions  } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
+import { category } from '../../tools/api'
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -24,13 +26,12 @@ export class AboutComponent implements OnInit {
 		
 
 	ngOnInit() {
-		this.getBooks().then(res => { 
+		console.log(category.getlevel1)
 
-	      console.log(res.data)
-
-	      this.mobiles = res.data;
-
-	    });
+		this.getBooks().then(res => {
+			console.log(res.data)
+			this.mobiles = res.data;
+		});
 	}
 
 
@@ -50,6 +51,10 @@ export class AboutComponent implements OnInit {
 
 	    return Promise.reject(error.message || error);   
 
+	}
+
+	goCart(){
+		// this.router.navigate(['/cart',7]);
 	}
 
 }

@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 
 import { SliceStrPipe } from '../tools/pipe/slice/pipe-slice';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { MineComponent } from './mine/mine.component';
 import { IndexComponent } from './index/index.component';
 import { GoodsComponent } from './goods/goods.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // 自定义管道
 const pipe = [
@@ -27,7 +28,8 @@ const pipe = [
     CartComponent,
     MineComponent,
     IndexComponent,
-    GoodsComponent
+    GoodsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
