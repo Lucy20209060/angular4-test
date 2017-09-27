@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: [
-  	'./index.component.scss',
-  	'../../tools/font/iconfont.css'
-  ]
+	selector: 'app-index',
+	templateUrl: './index.component.html',
+	styleUrls: [
+		'./index.component.scss',
+		'../../tools/font/iconfont.css'
+	]
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+	private num = 33;
 
-  ngOnInit() {
-  }
+	constructor() { }
+
+	ngOnInit() {
+	}
 
 }

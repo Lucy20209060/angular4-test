@@ -1,43 +1,32 @@
 <router-outlet></router-outlet>
-<!-- <nav>
-	<a routerLink="/home" routerLinkActive="active">home</a>
-	<a routerLink="/about" routerLinkActive="active">about</a>
-	<a routerLink="/cart/34" routerLinkActive="active">car</a>
-</nav> -->
 
 <div class="Bar-wrap">
-	<!-- <a to="/index">
-		<i class="iconfont icon-dianpu"></i>
-		<span>首页</span>
-	</a>
-
-	<a to="/classify">
-		<i class="iconfont icon-fenlei"></i>
-		<span>分类</span>
-	</a>
-
-	<a to="/car">
-		<i class="iconfont icon-gouwuche"></i>
-		<span>购物车</span>
-	</a>
-
-	<a to="/mine">
-		<i class="iconfont icon-wode"></i>
-		<span>我的</span>
-	</a> -->
-
+	
+	<!-- 
+		路由
+		[routerLink]="['/','home']" 
+	-->
 	<a routerLink="/home" routerLinkActive="active">
 		<i class="iconfont icon-dianpu"></i>
 		<span>首页</span>
 	</a>
-	<a routerLink="/about" routerLinkActive="active">
+	<a 	
+	routerLink="/about" routerLinkActive="active">
 		<i class="iconfont icon-fenlei"></i>
 		<span>分类</span>
 	</a>
-	<a routerLink="/cart/34" routerLinkActive="active">
+	
+	<!-- 路由跳转 传参 -->
+	<a [routerLink]="['/cart',num]" routerLinkActive="active">
 		<i class="iconfont icon-gouwuche"></i>
 		<span>购物车</span>
 	</a>
+
+	<!-- <a routerLink="/cart/999" routerLinkActive="active">
+		<i class="iconfont icon-gouwuche"></i>
+		<span>购物车</span>
+	</a> -->
+	
 	<a routerLink="/mine" routerLinkActive="active">
 		<i class="iconfont icon-wode"></i>
 		<span>我的</span>

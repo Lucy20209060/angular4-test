@@ -20,23 +20,23 @@ const pipe = [
 ]
 
 @NgModule({
-  declarations: [
-    ...pipe,
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    CartComponent,
-    MineComponent,
-    IndexComponent,
-    GoodsComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        ...pipe,
+        AppComponent,
+        HomeComponent,
+        AboutComponent,
+        CartComponent,
+        MineComponent,
+        IndexComponent,
+        GoodsComponent,
+        NotFoundComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

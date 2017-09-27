@@ -1,7 +1,9 @@
 import { Component, OnInit,Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise';
 import { category } from '../../tools/api'
+
 
 @Component({
 	selector: 'app-about',
@@ -24,18 +26,34 @@ export class AboutComponent implements OnInit {
 	
 	ngOnInit() {
 		this.makeRequest();
+		this.makePost();
 	}
 
 	// http请求
 	makeRequest():void{
-		this.http.request(category.getlevel1).subscribe((res:Response) => {
-			const data = res.json();
-			console.log(data)
-		});
+
+		this.http
+			.request(category.getlevel1)
+			.subscribe((res:Response) => {
+				const data = res.json();
+				this.mobiles = data.data
+				console.log(this.mobiles)
+			});
 	}
 
-	goCart(){
-		// this.router.navigate(['/cart',7]);
+	// http post
+	makePost(id = 926):void{ // JSON.stringify(par)
+		const par = { id }
+		this.http
+			.post(category.getlevel1children,par)
+			.subscribe((res:Response) => {
+				const data = res.json();
+				console.log(data.data)
+			})
+	}
+
+	goCart():void{
+		// this.router.navigate(['/mine']);
 	}
 
 }

@@ -13,9 +13,9 @@ export class CartComponent implements OnInit {
 
 
 
-	constructor(protected activatedRoute: ActivatedRoute) { 
+	constructor(private router: ActivatedRoute) { 
 
-		this.activatedRoute.params.subscribe((params: { id: number }) => {
+		router.params.subscribe((params: { id: number }) => {
 	       this.id = params.id
 	    });
 
