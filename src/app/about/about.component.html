@@ -5,7 +5,7 @@
 </p>
 <dl class="about-dl">
 	<dt class="about-dl-dt">dt-bb</dt>
-	<dd class="about-dl-dd" *ngFor="let item of mobiles">{{item.name}}{{item.id}}</dd>
+	<dd class="about-dl-dd" *ngFor="let item of mobiles">{{item.name | sliceStr:0:3:'$'}}{{item.id}}</dd>
 </dl>
 <P>
 	<button (click)="goCart">go cart</button>

@@ -6,6 +6,7 @@ import {AuthService} from '../pubilc/guards/AuthService';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
+
 export class DetailComponent {
   message: string;
 
@@ -13,7 +14,12 @@ export class DetailComponent {
     this.message = '';
   }
 
+  test2(username, password):void{
+    console.log(username.value,password.value)
+  }
+
   login(username: string, password: string): boolean {
+    this.authService.test()
     this.message = '';
     if (!this.authService.login(username, password)) {
       this.message = 'Incorrect credentials.';
