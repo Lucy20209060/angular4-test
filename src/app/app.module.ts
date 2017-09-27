@@ -13,6 +13,14 @@ import { MineComponent } from './mine/mine.component';
 import { IndexComponent } from './index/index.component';
 import { GoodsComponent } from './goods/goods.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailComponent } from './detail/detail.component';
+
+/*
+ * Services
+ */
+import {AUTH_PROVIDERS} from './pubilc/guards/AuthService';
+import {LoggedInGuard} from './pubilc/guards/loggedIn.guard';
+
 
 // 自定义管道
 const pipe = [
@@ -29,14 +37,18 @@ const pipe = [
         MineComponent,
         IndexComponent,
         GoodsComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        DetailComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpModule
     ],
-    providers: [],
+    providers: [
+        AUTH_PROVIDERS,
+        LoggedInGuard
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
