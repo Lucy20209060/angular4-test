@@ -40,6 +40,7 @@ const routes: Routes = [
         path:'404', 
         component:NotFoundComponent
     },
+    // 重定向
     { path: '**', redirectTo: '404',pathMatch: 'full' }
 
 ];
