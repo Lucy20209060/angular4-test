@@ -9,7 +9,7 @@ import { MineComponent }        from './mine/mine.component';
 import { NotFoundComponent }    from './not-found/not-found.component';
 import { DetailComponent }      from './detail/detail.component';
 
-import {LoggedInGuard} from './pubilc/guards/loggedIn.guard';
+import { LoggedInGuard } from './pubilc/guards/loggedIn.guard';
 
 const routes: Routes = [
     // 重定向

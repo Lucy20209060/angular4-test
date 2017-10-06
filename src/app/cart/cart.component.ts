@@ -9,22 +9,27 @@ import { ActivatedRoute } from '@angular/router';
 
 export class CartComponent implements OnInit {
 
-	public id:number;	// private
+	public id:string;	// private
 
 
 
 	constructor(private router: ActivatedRoute) { 
 
-		router.params.subscribe((params: { id: number }) => {
-	       this.id = params.id
-	    });
+		/*
+			两种获取路由参数的方式
+		*/ 
 
-	    console.log(this.id)
+		// router.params.subscribe((params: { id: number }) => {
+		// 	this.id = params.id
+		// });
+
+		this.id = router.snapshot.paramMap.get('id');
+
 
 	}
 
 	ngOnInit() {
-
+		
 	}
 
 }
