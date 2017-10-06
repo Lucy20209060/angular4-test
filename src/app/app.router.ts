@@ -13,36 +13,28 @@ import { LoggedInGuard } from './pubilc/guards/loggedIn.guard';
 
 const routes: Routes = [
     // 重定向
-    { 
-        path:'',          
-        redirectTo: 'home',
-        pathMatch: 'full' 
-    },
-	{
-		path: '',
-		component:IndexComponent,
-        children: [
-            
+    { path:'', redirectTo: 'home', pathMatch: 'full' },
+
+	{ path: '', component:IndexComponent, children: [
             { path:'home',      component:HomeComponent },
             { path:'about',     component:AboutComponent },
             { path:'cart/:id',  component:CartComponent },
             { path:'mine',      component:MineComponent }
         ]
 	},
+
     { 
-        path:'detail',
-        component:DetailComponent,
+        path:'detail', 
+        component:DetailComponent, 
         canActivate: [LoggedInGuard],  //进入
         // canDeactivate : [BlockOut] //出去
     },
+
     // 404 页面
-    { 
-        path:'404', 
-        component:NotFoundComponent
-    },
+    { path:'404', component:NotFoundComponent },
+
     // 重定向
     { path: '**', redirectTo: '404',pathMatch: 'full' }
-
 ];
 
 @NgModule({
