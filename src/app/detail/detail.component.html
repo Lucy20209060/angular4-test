@@ -13,19 +13,23 @@
       <input class="form-control" type="password" name="password" #password>
     </div>
 
-    <a 
-    	class="btn btn-default" 
-    	(click)="login(username.value, password.value)"
-    >
-      Submit
-    </a>
+    <div class="form-group">
+        <a 
+            class="btn btn-default" 
+            (click)="login(username.value, password.value)"
+        >
+        Submit
+        </a>
 
-    <a 
-    	class="btn btn-default" 
-    	(click)="test2(username, password)"
-    >
-      test2
-    </a>
+        <a 
+            class="btn btn-default" 
+            (click)="test2(username, password)"
+        >
+        test2
+        </a>
+    </div>
+
+    
   </form>
 
   <div class="well" *ngIf="authService.getUser()">

@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit {
 	public title = 'about tilte!'
 	public mobiles
 
-	constructor(private http: Http) {
+	constructor(private http: Http,private router: Router) {
 
 	}
 	
@@ -52,8 +52,17 @@ export class AboutComponent implements OnInit {
 			})
 	}
 
-	goCart():void{
-		// this.router.navigate(['/mine']);
+	goMine():void{
+		/*
+		*	js跳转 带参数跳转
+		*/ 
+
+		// navigate方式
+		this.router.navigate(['/mine']);
+		// this.router.navigate(['/cart', 77]);
+
+		// navigateByUr方式
+		// this.router.navigateByUrl('/cart/55');
 	}
 
 }
