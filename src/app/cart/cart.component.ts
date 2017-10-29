@@ -60,24 +60,120 @@ export class CartComponent implements OnInit {
 			let X:[string,number,boolean];
 			X = ['aaa',123,true];
 
-			// 枚举
-			// 是对javascript标准数据类型的一个补充
+			// 枚举  是对javascript标准数据类型的一个补充
 			enum Role {a = 0, b = 4, c = 8}
 			let num2:Role = Role.b;
 
-			// Any
-			// 指定一个不确定类型的变量
+			// Any  指定一个不确定类型的变量
 			let notSure:any = [3,4,5];
 
-			// Void
-			// void类型与any类型相反 表示没有任何类型 当一个函数没有返回值时 定义其返回值为void
+			// Void  void类型与any类型相反 表示没有任何类型 当一个函数没有返回值时 定义其返回值为void
 			function func():void{
 				// ....
 			}
 			// 申明一个void类型的变量 只能是 undefined null
 			let unable:void = undefined;
-			console.log(unable)
-		
+
+			// Undefined Null  用处不大 和void相似
+			let unde:undefined = undefined;
+			let nul:null = null;
+
+			// Never  表示那些永不存在值的类型 总是抛出异常 或者 根本就不会有返回值的函数表达式 或者 箭头函数表达式的返回值类型
+			// never类型是任何类型的子类型 也可以赋值给任何类型 但是没有任何类型可以赋值给never（除了never自身，any也不行）
+			// 返回never的函数必须存在无法达到的终点
+			function error(message: string): never {
+			    throw new Error(message);
+			}
+
+			// 推断的返回值类型为never
+			function fail() {
+			    return error("Something failed");
+			}
+
+			// 返回never的函数必须存在无法达到的终点
+			function infiniteLoop(): never {
+			    while (true) {
+			    }
+			}
+
+		/*
+			接口  
+			TypeScript的核心原则之一是对值所具有的结构进行类型检查。 它有时被称做“鸭式辨型法”或“结构性子类型化”。 
+			在TypeScript里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。
+		*/ 
+			// 必选属性 规定函数传入的参数中 size属性的属性值类型为number
+			function printLabel(value:{size:number}) {
+			  console.log(value.size);
+			}
+			let myObj = {size: 10, label: "Size 10 Object"};
+			printLabel(myObj);
+			// 可选属性 ?
+			interface SquareConfig{
+				color?:string;
+				width?:number;
+			}
+			function createSquare(config:SquareConfig){
+				let newSquare = {color: "white", area: 100};
+				if (config.color) {
+				newSquare.color = config.color;
+				}
+				if (config.width) {
+				newSquare.area = config.width * config.width;
+				}
+				return newSquare;
+			}
+			let mySquare = createSquare({color: "black",width:4});
+			console.log(mySquare)
+			// 只读属性  readonly 
+			// 一些对象属性只能在对象刚刚创建的时候修改其值。 你可以在属性名前用 readonly来指定只读属性
+			interface Point {
+			    readonly x: number;
+			    readonly y: number;
+			}
+			let p1: Point = { x: 10, y: 20 };
+			// p1.x = 5; // error!
+			console.log(p1)
+
+			let a: number[] = [1, 2, 3, 4];
+			let ro: ReadonlyArray<number> = a;
+			// ro只读 不可修改
+			// ro[0] = 12; // error!
+			// ro.push(5); // error!
+			// ro.length = 100; // error!
+			// a = ro; // error!
+
+
+			interface StringArray {
+			  [index: number]: string;
+			}
+
+			let myArray: StringArray;
+			myArray = ["Bob", "Fred"];
+
+			let myStr: string = myArray[0];
+
+			// console.log(myArray)
+
+			/*
+				类
+			*/
+
+			class Greeter {
+			    greeting: string;
+			    constructor(message: string) {
+			        this.greeting = message;
+			    }
+			    greet() {
+			        return "Hello, " + this.greeting;
+			    }
+			}
+
+			let greeter = new Greeter("world");
+
+			console.log(greeter.greet())
+
+
+
 	}
 
 }
