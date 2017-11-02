@@ -14,7 +14,7 @@ import { category } from '../../tools/api'
 	}
 })
 
-@Injectable()
+// @Injectable()
 export class AboutComponent implements OnInit {
 
 	public title = 'about tilte!'
@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
 	}
 
 	// http请求
-	makeRequest():void{
+	makeRequest():void{  // Interceptors 
 
 		this.http
 			.request(category.getlevel1)
@@ -61,7 +61,7 @@ export class AboutComponent implements OnInit {
 		this.router.navigate(['/mine']);
 		// this.router.navigate(['/cart', 77]);
 
-		// navigateByUr方式
+		// navigateByUrl方式
 		// this.router.navigateByUrl('/cart/55');
 	}
 

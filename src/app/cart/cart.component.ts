@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
 			2.类 					／／ （ES6也有）
 			3.注解
 			4.模块导入 				／／ （ES6也有）
-			5.语言工具包（比如结构）
+			5.语言工具包（比如解构）
 
 			ES5 + 类 + 模块 => ES6 + 类型 + 注解 => TypeScript
 		*/
@@ -142,7 +142,6 @@ export class CartComponent implements OnInit {
 			// ro.length = 100; // error!
 			// a = ro; // error!
 
-
 			interface StringArray {
 			  [index: number]: string;
 			}
@@ -157,7 +156,6 @@ export class CartComponent implements OnInit {
 			/*
 				类
 			*/
-
 			class Greeter {
 			    greeting: string;
 			    constructor(message: string) {
@@ -170,9 +168,37 @@ export class CartComponent implements OnInit {
 
 			let greeter = new Greeter("world");
 
-			console.log(greeter.greet())
+			// console.log(greeter.greet())  // Hello, world
 
+			class Animal {
+			    name:string;
+			    constructor(theName: string) { this.name = theName; }
+			    move(distanceInMeters: number = 0) {
+			        console.log(`${this.name} moved ${distanceInMeters}m.`);
+			    }
+			}
 
+			class Snake extends Animal {
+			    constructor(name: string) { super(name); }
+			    move(distanceInMeters = 5) {
+			        console.log("Slithering...");
+			        super.move(distanceInMeters);
+			    }
+			}
+
+			class Horse extends Animal {
+			    constructor(name: string) { super(name); }
+			    move(distanceInMeters = 45) {
+			        console.log("Galloping...");
+			        super.move(distanceInMeters);
+			    }
+			}
+
+			let sam = new Snake("Sammy the Python");
+			let tom: Animal = new Horse("Tommy the Palomino");
+
+			sam.move();
+			tom.move(34);
 
 	}
 
