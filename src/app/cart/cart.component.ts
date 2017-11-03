@@ -170,35 +170,50 @@ export class CartComponent implements OnInit {
 
 			// console.log(greeter.greet())  // Hello, world
 
-			class Animal {
-			    name:string;
-			    constructor(theName: string) { this.name = theName; }
-			    move(distanceInMeters: number = 0) {
-			        console.log(`${this.name} moved ${distanceInMeters}m.`);
-			    }
-			}
+			/*
+				继承
+			*/
+			// class Animal {
+			//     name:string;
+			//     constructor(theName: string) { 
+			//     	this.name = theName; 
+			//     }
+			//     move(distanceInMeters: number = 0) {
+			//         console.log(`${this.name} moved ${distanceInMeters}m.`);
+			//     }
+			// }
 
-			class Snake extends Animal {
-			    constructor(name: string) { super(name); }
-			    move(distanceInMeters = 5) {
-			        console.log("Slithering...");
-			        super.move(distanceInMeters);
-			    }
-			}
+			// class Snake extends Animal {
+			//     constructor(name: string) { 
+			//     	super(name); 
+			//     }
+			//     move(distanceInMeters = 5) {
+			//         // console.log("Slithering...");
+			//         super.move(distanceInMeters);
+			//     }
+			// }
 
-			class Horse extends Animal {
-			    constructor(name: string) { super(name); }
-			    move(distanceInMeters = 45) {
-			        console.log("Galloping...");
-			        super.move(distanceInMeters);
-			    }
-			}
+			// class Horse extends Animal {
+			//     constructor(name: string) { super(name); }
+			//     move(distanceInMeters = 45) {
+			//         // console.log("Galloping...");
+			//         super.move(distanceInMeters);
+			//     }
+			// }
 
-			let sam = new Snake("Sammy the Python");
-			let tom: Animal = new Horse("Tommy the Palomino");
+			// let sam = new Snake("Sammy the Python");
+			// let tom: Animal = new Horse("Tommy the Palomino");
 
-			sam.move();
-			tom.move(34);
+			// sam.move();
+			// tom.move(34);
+
+			// class Animal {
+			//     private name: string;
+			//     constructor(theName: string) { this.name = theName; }
+			// }
+
+			// let cat = new Animal("Cat"); // Error: 'name' is private;
+			// console.log(cat.name)
 
 	}
 
