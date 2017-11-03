@@ -215,6 +215,55 @@ export class CartComponent implements OnInit {
 			// let cat = new Animal("Cat"); // Error: 'name' is private;
 			// console.log(cat.name)
 
+			// class Person {
+			//     protected name: string;
+			//     constructor(name: string) { this.name = name; }
+			// }
+
+			// class Employee extends Person {
+			//     private department: string;
+
+			//     constructor(name: string, department: string) {
+			//         super(name)
+			//         this.department = department;
+			//     }
+
+			//     public getElevatorPitch() {
+			//         return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+			//     }
+			// }
+
+			// let howard = new Employee("Howard", "Sales");
+			// console.log(howard.getElevatorPitch());
+			// console.log(howard.name); // error
+
+			let passcode = "secret passcode";
+
+			class Employee {
+			    private _fullName: string;
+
+			    get fullName(): string {
+			    	console.log(111)
+			        return this._fullName;
+			    }
+
+			    set fullName(newName: string) {
+			    	console.log(222)
+			        if (passcode && passcode == "secret passcode") {
+			            this._fullName = newName;
+			        }
+			        else {
+			            console.log("Error: Unauthorized update of employee!");
+			        }
+			    }
+			}
+
+			let employee = new Employee();
+			// employee.fullName = "Bob Smith";	// 赋值 调用set
+			if (employee.fullName) {
+			    // console.log(employee.fullName);
+			}
+
 	}
 
 }
