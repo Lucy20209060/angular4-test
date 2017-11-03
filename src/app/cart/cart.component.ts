@@ -260,9 +260,9 @@ export class CartComponent implements OnInit {
 
 			let employee = new Employee();
 			// employee.fullName = "Bob Smith";	// 赋值 调用set
-			if (employee.fullName) {
+			// if (employee.fullName) {			// 获取 调用get
 			    // console.log(employee.fullName);
-			}
+			// }
 
 	}
 
