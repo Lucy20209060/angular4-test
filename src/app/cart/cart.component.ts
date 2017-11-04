@@ -102,28 +102,28 @@ export class CartComponent implements OnInit {
 			在TypeScript里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。
 		*/ 
 			// 必选属性 规定函数传入的参数中 size属性的属性值类型为number
-			function printLabel(value:{size:number}) {
-			  console.log(value.size);
-			}
-			let myObj = {size: 10, label: "Size 10 Object"};
-			printLabel(myObj);
-			// 可选属性 ?
-			interface SquareConfig{
-				color?:string;
-				width?:number;
-			}
-			function createSquare(config:SquareConfig){
-				let newSquare = {color: "white", area: 100};
-				if (config.color) {
-				newSquare.color = config.color;
-				}
-				if (config.width) {
-				newSquare.area = config.width * config.width;
-				}
-				return newSquare;
-			}
-			let mySquare = createSquare({color: "black",width:4});
-			console.log(mySquare)
+			// function printLabel(value:{size:number}) {
+			//   console.log(value.size);
+			// }
+			// let myObj = {size: 10, label: "Size 10 Object"};
+			// printLabel(myObj);
+			// // 可选属性 ?
+			// interface SquareConfig{
+			// 	color?:string;
+			// 	width?:number;
+			// }
+			// function createSquare(config:SquareConfig){
+			// 	let newSquare = {color: "white", area: 100};
+			// 	if (config.color) {
+			// 	newSquare.color = config.color;
+			// 	}
+			// 	if (config.width) {
+			// 	newSquare.area = config.width * config.width;
+			// 	}
+			// 	return newSquare;
+			// }
+			// let mySquare = createSquare({color: "black",width:4});
+			// console.log(mySquare)
 			// 只读属性  readonly 
 			// 一些对象属性只能在对象刚刚创建的时候修改其值。 你可以在属性名前用 readonly来指定只读属性
 			interface Point {
@@ -132,7 +132,7 @@ export class CartComponent implements OnInit {
 			}
 			let p1: Point = { x: 10, y: 20 };
 			// p1.x = 5; // error!
-			console.log(p1)
+			// console.log(p1)
 
 			let a: number[] = [1, 2, 3, 4];
 			let ro: ReadonlyArray<number> = a;
@@ -301,15 +301,23 @@ export class CartComponent implements OnInit {
 			// department.printMeeting();
 			// department.generateReports(); // error: method doesn't exist on declared abstract type
 
-			function buildName(firstName: string, lastName = "Smith") {
-			    return firstName + " " + lastName;
+			// function buildName(firstName: string, lastName = "Smith") {
+			//     return firstName + " " + lastName;
+			// }
+
+			// let result1 = buildName("Bob");                  // works correctly now, returns "Bob Smith"
+			// let result2 = buildName("Bob", undefined);       // still works, also returns "Bob Smith"
+			// // let result3 = buildName("Bob", "Adams", "Sr.");  // error, too many parameters
+			// let result4 = buildName("Bob", "Adams");         // ah, just right
+			// console.log(result2)
+
+			function buildName(...restOfName: string[]) {
+			  // restOfName.push(firstName);
+			  return restOfName
 			}
 
-			let result1 = buildName("Bob");                  // works correctly now, returns "Bob Smith"
-			let result2 = buildName("Bob", undefined);       // still works, also returns "Bob Smith"
-			// let result3 = buildName("Bob", "Adams", "Sr.");  // error, too many parameters
-			let result4 = buildName("Bob", "Adams");         // ah, just right
-			console.log(result2)
+			let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+			console.log(employeeName)
 
 	}
 
