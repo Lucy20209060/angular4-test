@@ -15,6 +15,9 @@ import { GoodsComponent } from './goods/goods.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailComponent } from './detail/detail.component';
 
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './pubilc/counter';
+
 /*
  * Services
  */
@@ -43,7 +46,8 @@ const pipe = [
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpModule
+        HttpModule,
+        StoreModule.provideStore({ counter: counterReducer })
     ],
     providers: [
         AUTH_PROVIDERS,

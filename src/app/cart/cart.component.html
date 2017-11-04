@@ -1,6 +1,14 @@
 <p>
   cart works! id:{{id}}
 </p>
+
+
+
+<span>Current Count: {{ counter | async }}</span><br><br>
+
+<button (click)="increment()">Increment+</button><br><br>
+<button (click)="decrement()">Decrement-</button><br><br>
+<button (click)="reset()">Reset Counter</button>
 <!-- 子组件  -->
 <!-- <app-home></app-home> -->
 <!-- <app-about></app-about> -->

@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { Store } from '@ngrx/store';
+import { INCREMENT, DECREMENT, RESET } from '../pubilc/counter';
+import {Observable} from 'rxjs/Rx';
+
+interface AppState {
+  counter: number;
+}
+
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,7 +20,10 @@ export class CartComponent implements OnInit {
 
 	public id:string;	// private
 
-	constructor(private router: ActivatedRoute) { 
+	counter: Observable<number>;
+
+
+	constructor(private router: ActivatedRoute,private store: Store<AppState>) { 
 
 		/*
 			两种获取路由参数的方式
@@ -23,6 +35,21 @@ export class CartComponent implements OnInit {
 
 		this.id = router.snapshot.paramMap.get('id');
 
+		this.counter = store.select('counter');
+
+	}
+
+	increment(){
+
+		this.store.dispatch({ type: INCREMENT });
+	}
+
+	decrement(){
+		this.store.dispatch({ type: DECREMENT });
+	}
+
+	reset(){
+		this.store.dispatch({ type: RESET });
 	}
 
 	ngOnInit() {
@@ -311,13 +338,13 @@ export class CartComponent implements OnInit {
 			// let result4 = buildName("Bob", "Adams");         // ah, just right
 			// console.log(result2)
 
-			function buildName(...restOfName: string[]) {
-			  // restOfName.push(firstName);
-			  return restOfName
-			}
+			// function buildName(...restOfName: string[]) {
+			//   // restOfName.push(firstName);
+			//   return restOfName
+			// }
 
-			let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
-			console.log(employeeName)
+			// let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+			// console.log(employeeName)
 
 	}
 
