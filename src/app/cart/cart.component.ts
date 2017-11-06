@@ -40,8 +40,8 @@ export class CartComponent implements OnInit {
 	}
 
 	increment(){
-
-		this.store.dispatch({ type: INCREMENT });
+		console.log(this.store.select('counter'))
+		this.store.dispatch({ type: INCREMENT,payload:9});
 	}
 
 	decrement(){
