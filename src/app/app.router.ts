@@ -31,7 +31,7 @@ const routes: Routes = [
         // canDeactivate : [BlockOut] //出去
     },
 
-    { path:'zhou',component:ZhouComponent },
+    { path:'zhou',component:ZhouComponent,data:{title:'aaaa'}},
 
     // 404 页面
     { path:'404', component:NotFoundComponent },
