@@ -8,6 +8,7 @@ import { CartComponent }        from './cart/cart.component';
 import { MineComponent }        from './mine/mine.component';
 import { NotFoundComponent }    from './not-found/not-found.component';
 import { DetailComponent }      from './detail/detail.component';
+import { ZhouComponent }      from './zhou/zhou.component';
 
 import { LoggedInGuard } from './pubilc/guards/loggedIn.guard';
 
@@ -29,6 +30,8 @@ const routes: Routes = [
         canActivate: [LoggedInGuard],  //进入
         // canDeactivate : [BlockOut] //出去
     },
+
+    { path:'zhou',component:ZhouComponent },
 
     // 404 页面
     { path:'404', component:NotFoundComponent },

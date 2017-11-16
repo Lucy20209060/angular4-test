@@ -1,0 +1,46 @@
+//省略号
+@mixin ell() {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* clearfix清除浮动 */
+@mixin clearfix {
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        height: 0;
+        line-height: 0;
+        overflow: hidden;
+    }
+    *height: 1%;
+}
+
+@mixin width-height($width, $height){
+	width: $width;
+	height: $height;
+}
+
+@mixin line {
+	position: relative;
+    &:before {
+        content: '';
+	    position: absolute;
+	    width: 200%;
+	    height: 1px;
+	    top: 0;
+	    border-top: 1px solid #ccc;
+	    -webkit-transform-origin: 0 0;
+	    transform-origin: 0 0;
+	    -webkit-transform: scale(.5,.5);
+	    transform: scale(.5,.5);
+	    box-sizing: border-box; 
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+	    -o-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+    }
+}

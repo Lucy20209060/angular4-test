@@ -1,0 +1,10 @@
+@import '../../tools/mixin';
+
+p{
+	display: flex;
+	/*@include width-height(200px,auto);*/
+	@include line;
+}
+div{
+	@include clearfix;
+}
