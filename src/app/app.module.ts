@@ -24,6 +24,7 @@ import { counterReducer } from './pubilc/counter';
 import {AUTH_PROVIDERS} from './pubilc/guards/AuthService';
 import {LoggedInGuard} from './pubilc/guards/loggedIn.guard';
 import { ZhouComponent } from './zhou/zhou.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 // 自定义管道
@@ -43,7 +44,8 @@ const pipe = [
         GoodsComponent,
         NotFoundComponent,
         DetailComponent,
-        ZhouComponent
+        ZhouComponent,
+        MenuComponent
     ],
     imports: [
         BrowserModule,

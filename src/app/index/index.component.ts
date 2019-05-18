@@ -15,6 +15,7 @@ export class IndexComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		console.log(222)
 	}
 
 }
