@@ -3,5 +3,35 @@
 </p>
 
 <ng-template [ngIf]="true">
-  <div>this is template!</div>
+  <h3>this is template</h3>
 </ng-template>
+
+<!-- <div *ngIf="condition else falseContent">
+  condition = true
+</div>
+<ng-template #falseContent>
+  <div>condition = false</div>
+</ng-template> -->
+
+<div *ngIf="condition; then trueContent else falseContent"></div>
+
+<ng-template #trueContent>
+	<h3>{{condition}} template</h3>
+</ng-template>
+
+<ng-template #falseContent>
+	<h3>{{condition}} template</h3>
+</ng-template>
+
+<!-- <ul>
+  <ng-container *ngFor="let item of arr">
+    <li *ngIf="item.show === true">{{ item.name }}</li>
+  </ng-container>
+</ul> -->
+
+<div>
+  欢迎进入
+  <ng-content select="app-zhou"></ng-content>
+  页面
+</div>
+

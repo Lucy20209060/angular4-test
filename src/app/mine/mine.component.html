@@ -11,4 +11,14 @@
 <input type="text" name="title" #newtitle>
 
 
-<app-menu></app-menu>
+<app-menu>
+	<!-- <span class="title">home</span> -->
+	<ng-container ngProjectAs="app-zhou">
+		<app-zhou></app-zhou>
+	</ng-container>
+</app-menu>
+
+
+  <!-- <ng-container> -->
+    <!-- <app-zhou></app-zhou> -->
+  <!-- </ng-container> -->
