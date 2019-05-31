@@ -3,10 +3,6 @@
   	<span class="about-span">aa</span>
 	<button routerLink="/mine">Go to mine</button>
 </p>
-<dl class="about-dl">
-	<dt class="about-dl-dt">dt-bb</dt>
-	<dd class="about-dl-dd" *ngFor="let item of mobiles">{{item.name | sliceStr:0:3:'$'}}{{item.id}}</dd>
-</dl>
 <P>
 	<button (click)="goMine()">go Mine</button>
 </P>
@@ -14,3 +10,17 @@
 	<!-- 带参数跳转 -->
 	<a [routerLink]="['/cart', 88]">go cart（带参数跳转）</a>
 </p>
+<dl class="about-dl">
+	<dt class="about-dl-dt">dt-bb</dt>
+	<dd class="about-dl-dd" *ngFor="let item of mobiles">{{item.name | sliceStr:0:3:'$'}}{{item.id}}</dd>
+</dl>
+
+<div>
+	<p ngNonBindable>{{ 'Angular' | uppercase }}</p>
+	<p>{{ 'Angular' | uppercase }}</p> <!-- Output: ANGULAR -->
+	<hr>
+	<p>{{ 'aaaaaaaaaa' | touppercase }}</p>
+	<p>{{ 'aaaaaaaaaa' | touppercase:2:6 }}</p>
+	<p>{{ 'aaaaaaaaaa' | touppercase:4:1 }}</p>
+	<p>{{ 'aaaaaaaaaa' | touppercase:4 }}</p>
+</div>

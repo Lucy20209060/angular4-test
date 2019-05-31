@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { SliceStrPipe } from '../tools/pipe/slice/pipe-slice';
+import { ToUpperCase } from '../tools/pipe/pipe-touppercase';
 
 import { AppRoutingModule } from './app.router';
 import { AppComponent } from './app.component';
@@ -29,7 +30,8 @@ import { MenuComponent } from './components/menu/menu.component';
 
 // 自定义管道
 const pipe = [
-    SliceStrPipe
+    SliceStrPipe,
+    ToUpperCase
 ]
 
 @NgModule({
@@ -45,7 +47,7 @@ const pipe = [
         NotFoundComponent,
         DetailComponent,
         ZhouComponent,
-        MenuComponent
+        MenuComponent,
     ],
     imports: [
         BrowserModule,

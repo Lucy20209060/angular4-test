@@ -27,6 +27,12 @@ export class AboutComponent implements OnInit {
 	ngOnInit() {
 		this.makeRequest();
 		this.makePost();
+		console.log(this.test())
+	}
+
+	// 数字字面量类型
+	test():1|2 {
+		return 2
 	}
 
 	// http请求
